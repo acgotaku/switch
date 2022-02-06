@@ -63,6 +63,10 @@
 
     下载 `Tinfoil xxx NRO (Self Installer)` 到 `/switch` 文件夹下。
 
+11. [90DNS Tester](https://github.com/meganukebmp/Switch_90DNS_tester/releases/latest) 测试任天堂服务器是否被成功屏蔽
+
+    下载 `Switch_90DNS_tester.nro` 到 `/switch` 文件夹下。
+
 NRO 软件可以按照自己需求添加，以上就是自定义系统下能使用到的常用软件列表了。
 
 配置文件：
@@ -124,3 +128,61 @@ NRO 软件可以按照自己需求添加，以上就是自定义系统下能使�
 ## 6. 安装虚拟系统
 
 虚拟系统完全安装在 SD 卡内，可以保证不污染 Switch 内部存储，是比较推荐的安装方式。 目前安装方式有两种，`SD File` 和 `SD Partition`， 推荐后者，因为后者的读取速度更快。
+
+1. 打开 Hekate， 选择 Tools， 然后点击 Partition SD Card
+
+   <img alt="安装虚拟系统" src="./images/Step1.png" width="1080"></img>
+
+2. 请保证 SD 卡的使用容量在 1 GB 以下，因为 1GB 以下会显示 `Your SD Card files will be backed up automatically!`。 1GB 以下会自动备份和恢复数据，否则需要自行备份数据。
+
+   <img alt="安装虚拟系统" src="./images/Step2.png" width="1080"></img>
+
+3. 调整 emuMMC (RAW) 为 29 GiB，界面上会显示 `29 full`
+
+   <img alt="安装虚拟系统" src="./images/Step3.png" width="1080"></img>
+
+4. 选择 `Next Step`，点击 `Start` 然后等待完成。
+
+   <img alt="安装虚拟系统" src="./images/Step4.png" width="1080"></img>
+
+5. 返回 Home，点击 `emuMMC`
+
+   <img alt="安装虚拟系统" src="./images/Step5.png" width="1080"></img>
+
+6. 选择 `Create emuMMC`
+
+   <img alt="安装虚拟系统" src="./images/Step6.png" width="1080"></img>
+
+7. 选择 `SD Partition`
+
+   <img alt="安装虚拟系统" src="./images/Step7.png" width="1080"></img>
+
+8. 选择 `Part 1`
+
+   <img alt="安装虚拟系统" src="./images/Step8.png" width="1080"></img>
+
+9. 等待完成，点击 Close -> Home -> Launch ，选择 `Atmosphere Fusee CFW` 启动。然后就开始进入系统了。
+
+10. 进入系统，查看系统设置，如果显示当前版本包含字母 `E` 说明成功进入虚拟系统了。
+
+    <img alt="安装虚拟系统" src="./images/SystemSettings.jpeg" width="1080"></img>
+
+## 7. 安装游戏
+
+返回系统主界面，点击相册能看到大气层系统安装的一些软件。点击 `Tinfoil` 会自动安装到主界面，以后就不用进入相册来安装游戏了。
+
+Tinfoil 支持[网络安装](https://blawar.github.io/tinfoil/network/)，这里推荐使用 `Samba` 方式来安装，PC 开启 SMB 共享之后，
+使用 Switch 进行访问，既能解决 FAT32 不支持 4GB 以上文件，游戏无法复制到 SD 卡上的问题，又能避免每次安装都要关机插拔 SD 卡到电脑复制游戏。
+不过联网之前记得使用[90DNS](https://gitlab.com/a/90dns)屏蔽任天堂服务器，避免机器被 ban。
+
+## 参考资料
+
+[NH Switch Guide](https://nh-server.github.io/switch-guide/)
+
+[Homebrew Guide](https://switch.homebrew.guide/)
+
+[Switch Hacking Is Easy](https://rentry.co/SwitchHackingIsEasy)
+
+[atmosphere-switch](https://github.com/esrrhs/atmosphere-switch)
+
+[Switch](https://github.com/Zi-BOOM/Switch)
