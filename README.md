@@ -12,3 +12,5 @@
 2. [RCM 注入器 v5](https://www.xkitcn.com/rcmloader/)，某宝上有售，自行搜索
 
 3. SD 卡，三星 EVO Plus 任天堂官方推荐。关于 SD 卡的文件格式，推荐 FAT32，exFAT 虽然可以支持 4GB 以上大文件，但是并不稳定。详细可以参考[SD Preparation](https://nh-server.github.io/switch-guide/user_guide/sysnand/sd_preparation/)
+
+## 2. 准备 SD 卡内容
