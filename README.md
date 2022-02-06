@@ -7,6 +7,7 @@
 1. 可以软破的 Switch 机器
 
    Switch 破解分为软件破解和硬件破解。硬件破解技术难度高，不在讨论范围内。软件破解需要 2018 年 6 月之前出厂的机器，具体能破解的序列号请参考下图：
+
    <img alt="可软破的switch机型序列号" src="./images/code.png" width="320"></img>
 
 2. [RCM 注入器 v5](https://www.xkitcn.com/rcmloader/)，某宝上有售，自行搜索
