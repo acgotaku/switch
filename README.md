@@ -21,9 +21,13 @@
 
 1. [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere/releases/latest) Switch 自定义操作系统
 
-   下载 `atmosphere-xxx-master-173d5c2d3+hbl-xxx+hbmenu-xxx.zip` 并解压到 SD 卡根目录。下载 `fusee.bin` 复制到 `/bootloader/payloads/fusee.bin`。
+   下载 `atmosphere-xxx-master-173d5c2d3+hbl-xxx+hbmenu-xxx.zip` 并解压到 SD 卡根目录。下载 `fusee.bin` 复制到 `/bootloader/payloads/`。
 
 2. [hekate](https://github.com/CTCaer/hekate/releases) Switch 引导文件
 
    下载 `hekate_ctcaer_xxx_Nyx_xxx.zip` 并解压到 SD 卡根目录。 这里有一个 `hekate_ctcaer_xxx.bin` 文件，注入器要使用。  
    把 RCM 注入器插入电脑，会识别为 U 盘，打开\ATMOSPHERE_HEKATE 文件夹，把刚才的 `hekate_ctcaer_xxx.bin` 复制为 payload.bin，然后拔掉。
+
+3. [Signature Patches](https://github.com/ITotalJustice/patches) 这个补丁可以支持安装非官方签名的游戏文件。
+
+   Atmosphère 系统有两个引导方案，默认的是 fss0 引导，如果想使用这个补丁必须使用 fusee 引导。
