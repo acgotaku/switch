@@ -14,7 +14,8 @@
 
 3. SD 卡，三星 EVO Plus 任天堂官方推荐
 
-   关于 SD 卡的文件格式，推荐 FAT32，exFAT 虽然可以支持 4GB 以上大文件，但是并不稳定。详细可以参考[SD Preparation](https://nh-server.github.io/switch-guide/user_guide/sysnand/sd_preparation/)
+   关于 SD 卡的文件格式，推荐 FAT32，exFAT 虽然可以支持 4GB 以上大文件，但是并不稳定。  
+   详细可以参考[SD Preparation](https://nh-server.github.io/switch-guide/user_guide/sysnand/sd_preparation/)
 
 ## 2. 准备 SD 卡内容
 
@@ -27,7 +28,7 @@
 2. [hekate](https://github.com/CTCaer/hekate/releases/latest) Switch 引导文件
 
    下载 `hekate_ctcaer_xxx_Nyx_xxx.zip` 并解压到 SD 卡根目录。 这里有一个 `hekate_ctcaer_xxx.bin` 文件，注入器要使用。  
-   把 RCM 注入器插入电脑，会识别为 U 盘，打开\ATMOSPHERE_HEKATE 文件夹，把刚才的 `hekate_ctcaer_xxx.bin` 复制为 payload.bin，然后拔掉。
+   把 RCM 注入器插入电脑，会识别为 U 盘，打开 `\ATMOSPHERE_HEKATE` 文件夹，把刚才的 `hekate_ctcaer_xxx.bin` 复制为 payload.bin，然后拔掉。
 
 3. [Signature Patches](https://github.com/ITotalJustice/patches/releases/latest) 这个补丁可以支持安装非官方签名的游戏文件
 
@@ -58,6 +59,10 @@
 
    下载 `appstore.nro`， 在 `/switch` 下创建 文件夹 `appstore`，然后把 `appstore.nro` 放入 `/switch/appstore`。
 
+10. [Tinfoil](https://tinfoil.io/Download#download) 游戏安装器，可以安装 XCI 或者 NSP 格式的游戏
+
+    下载 `Tinfoil xxx NRO (Self Installer)` 到 `/switch` 文件夹下。
+
 NRO 软件可以按照自己需求添加，以上就是自定义系统下能使用到的常用软件列表了。
 
 配置文件：
@@ -81,8 +86,8 @@ NRO 软件可以按照自己需求添加，以上就是自定义系统下能使�
 3. 拔掉右边的手柄，插入短接器
 4. 先按住音量+，再同时按住电源键，然后放开
 5. 长按 RCM 注入器的加号，直到闪烁蓝灯，说明是大气层模式。不是则放开，再长按切换
-6. RCM 插入到 Switch，蓝灯常量，启动到 boot 界面
-7. 当蓝灯不量的时候就可以拔掉注入器了，如果没有启动到 boot 界面，请从步骤 3 重新来过
+6. RCM 插入到 Switch，蓝灯常亮，启动到 boot 界面
+7. 当蓝灯不亮的时候就可以拔掉注入器了，如果没有启动到 boot 界面，请从步骤 3 重新来过
 
 ## 5. 备份系统
 
@@ -112,6 +117,10 @@ NRO 软件可以按照自己需求添加，以上就是自定义系统下能使�
 
    <img alt="备份系统" src="./images/backup6.png" width="1080"></img>
 
-7. 把 SD 卡插入电脑，复制 `backup` 文件夹到电脑。 备份成功的话，文件大小大概 32GB 左右。复制到电脑之后，就可以把 `backup` 文件夹删除了。
+7. 把 SD 卡插入电脑，复制 `backup` 文件夹到电脑。 备份成功的话，文件夹大小大概 32GB 左右。复制到电脑之后，就可以把 `backup` 文件夹删除了。
 
 备份系统的英文原版教程是[Making a NAND backup](https://nh-server.github.io/switch-guide/user_guide/emummc/making_emummc/#making-a-nand-backup)
+
+## 6. 安装虚拟系统
+
+虚拟系统完全安装在 SD 卡内，可以保证不污染 Switch 内部存储，是比较推荐的安装方式。 目前安装方式有两种，`SD File` 和 `SD Partition`， 推荐后者，因为后者的读取速度更快。
