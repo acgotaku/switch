@@ -19,7 +19,7 @@
 
 软件清单：
 
-1. [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere/releases/latest) Switch 自定义操作系统
+1. [Atmosphère](https://github.com/Atmosphere-NX/Atmosphere/releases/latest) Switch 自定义操作系统，中文名是大气层
 
    下载 `atmosphere-xxx-master-173d5c2d3+hbl-xxx+hbmenu-xxx.zip` 并解压到 SD 卡根目录。下载 `fusee.bin` 复制到 `/bootloader/payloads`。
 
@@ -56,3 +56,61 @@
 9. [hbappstore](https://github.com/fortheusers/hb-appstore/releases/latest) 顾名思义，软件商店
 
    下载 `appstore.nro`， 在 `/switch` 下创建 文件夹 `appstore`，然后把 `appstore.nro` 放入 `/switch/appstore`。
+
+NRO 软件可以按照自己需求添加，以上就是自定义系统下能使用到的常用软件列表了。
+
+配置文件：
+
+1. [/bootloader/hekate_ipl.ini](./sdcard/bootloader/hekate_ipl.ini) 这是引导的配置文件，可以类比为 GRUB2 的启动项描述文件。
+
+   启动项里面有图标描述文件，位置在 [/bootloader/res](./sdcard/bootloader/res) 也一并复制过去。
+
+## 3. 配置 Switch
+
+破解 Switch 有被任天堂 ban 机的风险，为了减少这个风险需要禁止机器联网和登出自己的 Switch 帐号。
+
+1. 在联网的情况下登出自己的 Switch 账户
+2. 删除所有 Wifi 配置文件，保证 Switch 不会自动联网
+3. 最好重新初始化 Switch
+
+## 4. 重新启动 Switch 机器 进入 hekate
+
+1. 把 SD 卡插入 Switch
+2. 按电源键，选择电源选项 -> 关闭电源
+3. 拔掉右边的手柄，插入短接器
+4. 先按住音量+，再同时按住电源键，然后放开
+5. 长按 RCM 注入器的加号，直到闪烁蓝灯，说明是大气层模式。不是则放开，再长按切换
+6. RCM 插入到 Switch，蓝灯常量，启动到 boot 界面
+7. 当蓝灯不量的时候就可以拔掉注入器了，如果没有启动到 boot 界面，请从步骤 3 重新来过
+
+## 5. 备份系统
+
+为了避免自己操作破坏了系统，我们需要在安装系统之前对系统进行备份。
+
+1. 点击 Tools
+
+   <img alt="备份系统" src="./images/backup1.png" width="1080"></img>
+
+2. 点击 Backup eMMC
+
+   <img alt="备份系统" src="./images/backup2.png" width="1080"></img>
+
+3. 点击 eMMC BOOT0 & BOOT1
+
+   <img alt="备份系统" src="./images/backup3.png" width="1080"></img>
+
+4. 等待完成，点击 Close
+
+   <img alt="备份系统" src="./images/backup4.png" width="1080"></img>
+
+5. 接下来点击 eMMC RAW GPP
+
+   <img alt="备份系统" src="./images/backup5.png" width="1080"></img>
+
+6. 等待完成，点击 Close -> Home -> Power Off
+
+   <img alt="备份系统" src="./images/backup6.png" width="1080"></img>
+
+7. 把 SD 卡插入电脑，复制 `backup` 文件夹到电脑。 备份成功的话，文件大小大概 32GB 左右。复制到电脑之后，就可以把 `backup` 文件夹删除了。
+
+备份系统的英文原版教程是[Making a NAND backup](https://nh-server.github.io/switch-guide/user_guide/emummc/making_emummc/#making-a-nand-backup)
