@@ -75,6 +75,10 @@ NRO 软件可以按照自己需求添加，以上就是自定义系统下能使�
 
    启动项里面有图标描述文件，位置在 [/bootloader/res](./sdcard/bootloader/res) 也一并复制过去。
 
+2. [/exosphere.ini](./sdcard/exosphere.ini) 这是大气层的配置文件，这个配置主要是为了隐藏主机的序列号防止被 ban
+
+3. [/atmosphere/hosts/emummc.txt](./sdcard/atmosphere/hosts/emummc.txt) 这是 hosts，这个配置主要是为了屏蔽任天堂服务器
+
 ## 3. 配置 Switch
 
 破解 Switch 有被任天堂 ban 机的风险，为了减少这个风险需要禁止机器联网和登出自己的 Switch 帐号。
@@ -167,6 +171,8 @@ NRO 软件可以按照自己需求添加，以上就是自定义系统下能使�
 
     <img alt="安装虚拟系统" src="./images/SystemSettings.jpeg" width="1080"></img>
 
+安装虚拟系统的英文原版教程是[Create an emuMMC](https://switch.homebrew.guide/emummc/emummc.html)
+
 ## 7. 安装游戏
 
 返回系统主界面，点击相册能看到大气层系统安装的一些软件。点击 `Tinfoil` 会自动安装到主界面，以后就不用进入相册来安装游戏了。
@@ -174,6 +180,22 @@ NRO 软件可以按照自己需求添加，以上就是自定义系统下能使�
 Tinfoil 支持[网络安装](https://blawar.github.io/tinfoil/network/)，这里推荐使用 `Samba` 方式来安装，PC 开启 SMB 共享之后，
 使用 Switch 进行访问，既能解决 FAT32 不支持 4GB 以上文件，游戏无法复制到 SD 卡上的问题，又能避免每次安装都要关机插拔 SD 卡到电脑复制游戏。
 不过联网之前记得使用[90DNS](https://gitlab.com/a/90dns)屏蔽任天堂服务器，避免机器被 ban。
+
+游戏文件类型：
+
+BASE 是游戏本体，一般版本号 1.0  
+UPD 是游戏升级档，有版本号更新到系统  
+DLC 是追加内容，主要是多点游戏内容
+
+游戏格式：
+
+NSP： **Nintendo Submission Package** 数字版游戏复制的格式。通常游戏本体和升级包需要分开安装。
+
+XCI： **NX Card Image** 实体卡带复制的格式。通常会有整合包，安装的时候需要允许安装 XCI 内的 UPD 和 DLC。
+
+NSZ： 压缩过后的 NSP 文件
+
+XCZ： 压缩过后的 XCI 文件
 
 ## 参考资料
 
