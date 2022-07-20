@@ -197,6 +197,10 @@ NSZ： 压缩过后的 NSP 文件
 
 XCZ： 压缩过后的 XCI 文件
 
+## Tinfoil
+
+Install Unsigned Code 安装未签署代码，需要输入密码：上 上 下 下 左 右 左 右 B A + 即可安装免签。
+
 ## 参考资料
 
 [NH Switch Guide](https://nh-server.github.io/switch-guide/)
