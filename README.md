@@ -29,6 +29,7 @@
 
    下载 `hekate_ctcaer_xxx_Nyx_xxx.zip` 并解压到 SD 卡根目录。 这里有一个 `hekate_ctcaer_xxx.bin` 文件，注入器要使用。  
    把 RCM 注入器插入电脑，会识别为 U 盘，打开 `\ATMOSPHERE_HEKATE` 文件夹，把刚才的 `hekate_ctcaer_xxx.bin` 复制为 payload.bin，然后拔掉。
+   最后把里面的 `bootloader` 文件夹拷贝到 SD 卡根目录。
 
 3. [Signature Patches](https://github.com/ITotalJustice/patches/releases/latest) 这个补丁可以支持安装非官方签名的游戏文件
 
@@ -39,31 +40,35 @@
 
    下载 `Lockpick_RCM.bin` 放到 `/bootloader/payloads` 文件夹下。 详细使用方法请看[Getting your Console's Unique Keys](https://nh-server.github.io/switch-guide/user_guide/emummc/making_emummc/#getting-your-consoles-unique-keys)
 
-5. [JKSV](https://github.com/J-D-K/JKSV/releases/latest) 游戏存档管理软件
+5. [TegraExplorer](https://github.com/suchmememanyskill/TegraExplorer/releases/latest) 这个软件可以导出系统固件。
+
+   下载 `TegraExplorer.bin` 放到 `/bootloader/payloads` 文件夹下。
+
+6. [JKSV](https://github.com/J-D-K/JKSV/releases/latest) 游戏存档管理软件
 
    下载 `JKSV.nro` 到 `/switch` 文件夹下。
 
-6. [FTPD](https://github.com/mtheall/ftpd/releases/latest) FTP Server，方便文件传输
+7. [FTPD](https://github.com/mtheall/ftpd/releases/latest) FTP Server，方便文件传输
 
    下载 `ftpd.nro` 到 `/switch` 文件夹下。
 
-7. [NxThemeInstaller](https://github.com/exelix11/SwitchThemeInjector/releases/latest) 顾名思义，主题安装器
+8. [NxThemeInstaller](https://github.com/exelix11/SwitchThemeInjector/releases/latest) 顾名思义，主题安装器
 
    下载 `NXThemesInstaller.nro` 到 `/switch` 文件夹下。
 
-8. [NX-Shell](https://github.com/joel16/NX-Shell/releases/latest) 文件管理器
+9. [NX-Shell](https://github.com/joel16/NX-Shell/releases/latest) 文件管理器
 
    下载 `NX-Shell.nro` 到 `/switch` 文件夹下。
 
-9. [hbappstore](https://github.com/fortheusers/hb-appstore/releases/latest) 顾名思义，软件商店
+10. [hbappstore](https://github.com/fortheusers/hb-appstore/releases/latest) 顾名思义，软件商店
 
-   下载 `appstore.nro`， 在 `/switch` 下创建 文件夹 `appstore`，然后把 `appstore.nro` 放入 `/switch/appstore`。
+    下载 `appstore.nro`， 在 `/switch` 下创建 文件夹 `appstore`，然后把 `appstore.nro` 放入 `/switch/appstore`。
 
-10. [Tinfoil](https://tinfoil.io/Download#download) 游戏安装器，可以安装 XCI 或者 NSP 格式的游戏
+11. [Tinfoil](https://tinfoil.io/Download#download) 游戏安装器，可以安装 XCI 或者 NSP 格式的游戏
 
     下载 `Tinfoil xxx NRO (Self Installer)` 到 `/switch` 文件夹下。
 
-11. [90DNS Tester](https://github.com/meganukebmp/Switch_90DNS_tester/releases/latest) 测试任天堂服务器是否被成功屏蔽
+12. [90DNS Tester](https://github.com/meganukebmp/Switch_90DNS_tester/releases/latest) 测试任天堂服务器是否被成功屏蔽
 
     下载 `Switch_90DNS_tester.nro` 到 `/switch` 文件夹下。
 
@@ -200,6 +205,19 @@ XCZ： 压缩过后的 XCI 文件
 ## Tinfoil
 
 Install Unsigned Code 安装未签署代码，需要输入密码：上 上 下 下 左 右 左 右 B A + 即可安装免签。
+
+## 升级系统
+
+1. 请先升级 Atmosphère，Hekate，Signature Patches，升级方法很简单下载最新版本到 SD 卡上，并且更新注入器的 `payload.bin`。
+   需要先删除 `atmosphere` 和 `bootloader` 文件夹再复制，强行覆盖的话不能保证成功启动。
+
+2. 到[Switch Firmwares](https://darthsternie.net/switch-firmwares/)去下载最新固件。并解压到 SD 卡根目录。
+
+3. 使用 `Daybreak` 来安装更新，选择 `Install`，然后选择固件的安装目录。
+
+4. 如果固件校验通过，点击 `Continue` 选择 `Preserve settings`, 如果可以选择 `Install (FAT32 + exFAT)` 就选这个，否则就选 `Install (FAT32)`。
+
+5. 安装完成之后，点击重启就完成升级了。英文原版教程是[Updating CFW](https://nh-server.github.io/switch-guide/extras/updating/)
 
 ## 参考资料
 
