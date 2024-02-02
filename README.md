@@ -31,9 +31,9 @@
    把 RCM 注入器插入电脑，会识别为 U 盘，打开 `\ATMOSPHERE_HEKATE` 文件夹，把刚才的 `hekate_ctcaer_xxx.bin` 复制为 payload.bin，然后拔掉。
    最后把里面的 `bootloader` 文件夹拷贝到 SD 卡根目录。
 
-3. [Signature Patches](https://github.com/ITotalJustice/patches/releases/latest) 这个补丁可以支持安装非官方签名的游戏文件
+3. [Signature Patches](https://sigmapatches.su/) 这个补丁可以支持安装非官方签名的游戏文件
 
-   下载 `SigPatches.zip` 并解压到 SD 卡根目录。
+   下载 `SigPatches` 并解压到 SD 卡根目录。[sigpatch-updater](https://github.com/ITotalJustice/sigpatch-updater) 可以直接从 Switch 下载最新的补丁。
    Atmosphère 系统有两个引导方案，默认的是 fss0 引导，如果想使用这个补丁必须使用 fusee 引导。
 
 4. [Lockpick_RCM](https://github.com/shchmue/Lockpick_RCM/releases/latest) 这个软件可以获取本机密钥，在处理 Switch 文件或者变砖修复的时候会用到，如果担心出问题最好提前备份。
@@ -211,7 +211,11 @@ Install Unsigned Code 安装未签署代码，需要输入密码：上 上 下 �
 1. 请先升级 Atmosphère，Hekate，Signature Patches，升级方法很简单下载最新版本到 SD 卡上，并且更新注入器的 `payload.bin`。
    需要先删除 `atmosphere` 和 `bootloader` 文件夹再复制，强行覆盖的话不能保证成功启动。
 
-2. 到[Switch Firmwares](https://darthsternie.net/switch-firmwares/)去下载最新固件。并解压到 SD 卡根目录。
+2. 到[Switch Firmwares](https://darthsternie.net/switch-firmwares/)去下载最新固件。并解压到 SD 卡根目录。如果 Daybreak 校验失败，是 MacOS 添加隐藏文件的问题，可以通过 `dot_clean` 命令来清除隐藏文件。
+
+   ```bash
+   dot_clean /Volumes/SWITCH\ SD/Firmware\ 17.0.1/
+   ```
 
 3. 使用 `Daybreak` 来安装更新，选择 `Install`，然后选择固件的安装目录。
 
